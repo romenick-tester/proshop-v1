@@ -1,5 +1,16 @@
+import React from "react";
+import { Footer, Header } from "./layouts";
+
 const App = () => {
-    return <h1>Hello World!</h1>
+    return (
+        <>
+            <Header />
+            <main>
+                <h1>hello world!</h1>
+            </main>
+            <Footer />
+        </>
+    )
 };
 
 export default App;
