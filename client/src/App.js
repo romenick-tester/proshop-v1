@@ -13,7 +13,7 @@ const App = () => {
 };
 
 const Main = () => {
-    return <main>
+    return <main className="py-3">
         <Container>
             <h1>hello world!</h1>
         </Container>
