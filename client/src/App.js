@@ -1,16 +1,23 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 import { Footer, Header } from "./layouts";
 
 const App = () => {
     return (
         <>
             <Header />
-            <main>
-                <h1>hello world!</h1>
-            </main>
+            <Main />
             <Footer />
         </>
     )
+};
+
+const Main = () => {
+    return <main>
+        <Container>
+            <h1>hello world!</h1>
+        </Container>
+    </main>
 };
 
 export default App;
