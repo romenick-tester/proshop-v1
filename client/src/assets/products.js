@@ -73,9 +73,9 @@ let products = [
   },
 ];
 
-const newProducts = products.map((product, index) => {
+products = products.map((product, index) => {
   // const randomNum = Math.floor(Math.random() * 99) + 1;
   return { ...product, _id: index + 1 }
 });
 
-export default newProducts;
+export default products;
