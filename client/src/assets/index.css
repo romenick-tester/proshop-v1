@@ -5,3 +5,11 @@ main {
 .ml-auto {
     margin-left: auto;
 }
+
+h3.h3-price {
+    padding-top: 10px;
+}
+
+.rating span {
+    margin-right: 2px;
+}
