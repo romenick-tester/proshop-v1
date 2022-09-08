@@ -1,9 +1,9 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import { Footer, Header } from "./layouts";
-import { HomePage } from "./pages";
+import { HomePage, ProductDetailsPage } from "./pages";
 
 const App = () => {
     return (
@@ -20,22 +20,10 @@ const Main = () => {
         <Container>
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/test1" element={<h1>Hello World!</h1>} />
-                <Route path="/product/:id" element={<ProductDetails />} />
+                <Route path="/product/:id" element={<ProductDetailsPage />} />
             </Routes>
         </Container>
     </main>
-};
-
-const ProductDetails = () => {
-    const { id } = useParams();
-
-    return (
-        <>
-            <h1>Product Details</h1>
-            <p>Product no. {id}</p>
-        </>
-    )
 };
 
 export default App;

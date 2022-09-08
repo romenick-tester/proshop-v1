@@ -13,3 +13,12 @@ h3.h3-price {
 .rating span {
     margin-right: 2px;
 }
+
+a:link,
+a:active {
+    text-decoration: none;
+}
+
+.btn-block {
+    width: 100%;
+}

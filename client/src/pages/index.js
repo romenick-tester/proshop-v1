@@ -1,5 +1,7 @@
 import HomePage from "./HomePage";
+import ProductDetailsPage from "./ProductDetailsPage";
 
 export {
-    HomePage
+    HomePage,
+    ProductDetailsPage
 };
