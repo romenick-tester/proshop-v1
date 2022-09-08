@@ -21,19 +21,19 @@ const Main = () => {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/test1" element={<h1>Hello World!</h1>} />
-                <Route path="/test2/:id" element={<ParamTesting />} />
+                <Route path="/product/:id" element={<ProductDetails />} />
             </Routes>
         </Container>
     </main>
 };
 
-const ParamTesting = () => {
+const ProductDetails = () => {
     const { id } = useParams();
 
     return (
         <>
-            <h1>Param Testing</h1>
-            <p>result: {id}</p>
+            <h1>Product Details</h1>
+            <p>Product no. {id}</p>
         </>
     )
 };
