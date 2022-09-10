@@ -1,3 +1,5 @@
+const { randomBytes } = require("crypto");
+
 let products = [
   {
     name: "Airpods Wireless Bluetooth Headphones",
@@ -74,8 +76,7 @@ let products = [
 ];
 
 products = products.map((product, index) => {
-  // const randomNum = Math.floor(Math.random() * 99) + 1;
-  return { ...product, _id: index + 1 }
+  return { ...product, _id: randomBytes(10,).toString("hex") }
 });
 
 module.exports = products;
