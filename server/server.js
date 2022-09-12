@@ -1,8 +1,11 @@
 const express = require("express");
 require("dotenv").config();
 const productRoutes = require("./routes/productRoutes");
+const connectDB = require("./assets/connectDB");
 
 const server = express();
+
+connectDB();
 
 server.use(express.json());
 
