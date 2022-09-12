@@ -8,17 +8,21 @@ import { getProducts } from "../../assets/redux/actions/products";
 const Home = () => {
     const dispatch = useDispatch();
 
-    const { list: products } = useSelector(state => state.productsList);
+    const { loading, list: products } = useSelector(state => state.productsList);
 
     useEffect(() => {
         dispatch(getProducts());
     }, [dispatch]);
 
+    if (loading) {
+        return <h1>LOADING...</h1>
+    }
+
     return (
         <>
             <h1>Latest Products</h1>
             <Row>
-                {products.map(product => (
+                {products && products.map(product => (
                     <Col sm={12} md={6} lg={4} xl={3} key={product._id} >
                         <Product product={product} />
                     </Col>

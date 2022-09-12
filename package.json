@@ -1,0 +1,27 @@
+{
+  "name": "proshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "npm run server --prefix server",
+    "client": "npm start --prefix client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romenick-tester/proshop-v1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romenick-tester/proshop-v1/issues"
+  },
+  "homepage": "https://github.com/romenick-tester/proshop-v1#readme",
+  "devDependencies": {
+    "concurrently": "^7.4.0",
+    "nodemon": "^2.0.19"
+  }
+}
