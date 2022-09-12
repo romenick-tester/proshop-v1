@@ -1,10 +1,16 @@
-const products = require("../assets/data/products");
+const Product = require("../assets/models/Product");
 
 
 const getProducts = async (req, res) => {
-    res
-        .status(200)
-        .json(products);
+    try {
+        const products = await Product.find();
+
+        res
+            .status(200)
+            .json(products);
+    } catch (err) {
+        console.error(err);
+    }
 };
 
 module.exports = { getProducts }
