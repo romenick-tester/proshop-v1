@@ -10,11 +10,11 @@ server.get("/", (req, res) => {
     res.send("Server is running...")
 });
 
-server.get("/products", (req, res) => {
+server.get("/api/v1/products", (req, res) => {
     res
         .status(200)
-        .json({ data: products });
+        .json(products);
 });
 
 const PORT = process.env.PORT || 8000;
-server.listen(PORT, console.log(`Server is running in ${process.env.NODE_ENV} on port ${PORT}...`));
+server.listen(PORT, console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}...`));
