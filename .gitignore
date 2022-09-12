@@ -26,4 +26,3 @@ node_modules
 .env
 images
 ./client/src/assets/products.js
-dataSeeder.js

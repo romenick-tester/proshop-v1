@@ -1,6 +1,6 @@
 // const { randomBytes } = require("crypto");
 
-let products = [
+const products = [
   {
     name: "Airpods Wireless Bluetooth Headphones",
     image: "/images/airpods.jpg",

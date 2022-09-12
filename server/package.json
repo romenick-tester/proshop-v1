@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
+    "data:import": "node assets/dataSeeder",
+    "data:destroy": "node assets/dataSeeder -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
