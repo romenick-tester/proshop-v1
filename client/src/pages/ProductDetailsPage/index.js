@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { Rating } from "../../components";
-import products from "../../assets/products";
+import { getProductDetails } from "../../assets/redux/actions/products";
 
 
 const ProductDetails = () => {
     const { id: productID } = useParams();
 
-    const product = products.find(item => item._id === +productID);
+    const dispatch = useDispatch();
+
+    const { details: product } = useSelector(state => state.productDetails);
+
+    useEffect(() => {
+        if (productID) {
+            dispatch(getProductDetails(productID));
+        }
+    }, [dispatch, productID]);
 
     if (!product) {
         return <h4>Ooops No product found</h4>
