@@ -1,4 +1,4 @@
-const { randomBytes } = require("crypto");
+// const { randomBytes } = require("crypto");
 
 let products = [
   {
@@ -75,8 +75,8 @@ let products = [
   },
 ];
 
-products = products.map((product, index) => {
-  return { ...product, _id: randomBytes(10,).toString("hex") }
-});
+// products = products.map((product, index) => {
+//   return { ...product, _id: randomBytes(10,).toString("hex") }
+// });
 
 module.exports = products;
