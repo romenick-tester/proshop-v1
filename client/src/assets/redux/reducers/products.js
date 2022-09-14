@@ -24,7 +24,7 @@ const productsListReducer = (state = productListInitialStates, action) => {
             return { ...state, loading: false, list: payload };
 
         case GET_PRODUCTS_ERROR:
-            return { ...state, loading: false, error: null }
+            return { ...state, loading: false, error: payload }
 
         default:
             return state;
@@ -48,7 +48,7 @@ const productDetailsReducer = (state = productDetailsInitialState, action) => {
             return { ...state, loading: false, details: payload };
 
         case GET_PRODUCT_DETAILS_ERROR:
-            return { ...state, loading: false, error: null }
+            return { ...state, loading: false, error: payload }
 
         default:
             return state;

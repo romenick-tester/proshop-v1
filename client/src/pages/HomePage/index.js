@@ -3,6 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Product from "./Product";
 import { getProducts } from "../../assets/redux/actions/products";
+import { Loading, Message } from "../../components";
 
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
     return (
         <>
             <h1>Latest Products</h1>
-            {loading ? <h2>LOADING...</h2> : error ? <h2>{error}</h2> : (
+            {loading ? <Loading /> : error ? <Message variant="danger">{error}</Message> : (
                 <Row>
                     {products && products.map(product => (
                         <Col sm={12} md={6} lg={4} xl={3} key={product._id} >

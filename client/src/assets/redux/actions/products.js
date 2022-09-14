@@ -16,7 +16,10 @@ const getProducts = () => async (dispatch) => {
         dispatch({ type: GET_PRODUCTS_SUCCESS, payload: data });
     } catch (err) {
         console.error(err.message);
-        dispatch({ type: GET_PRODUCTS_ERROR, payload: err.message });
+        dispatch({
+            type: GET_PRODUCTS_ERROR,
+            payload: err.response && err.response.data ? err.response.data.message : err.message
+        });
     }
 };
 
@@ -28,7 +31,10 @@ const getProductDetails = (id) => async (dispatch) => {
         dispatch({ type: GET_PRODUCT_DETAILS_SUCCESS, payload: data });
     } catch (err) {
         console.error(err.message);
-        dispatch({ type: GET_PRODUCT_DETAILS_ERROR, payload: err.message })
+        dispatch({
+            type: GET_PRODUCT_DETAILS_ERROR,
+            payload: err.response && err.response.data ? err.response.data.message : err.message
+        });
     }
 }
 
