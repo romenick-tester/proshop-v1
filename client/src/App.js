@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 
 import { Footer, Header } from "./layouts";
-import { HomePage, ProductDetailsPage } from "./pages";
+import { HomePage, ProductDetailsPage, CartPage } from "./pages";
 
 const App = () => {
     return (
@@ -21,6 +21,7 @@ const Main = () => {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/product/:id" element={<ProductDetailsPage />} />
+                <Route path="/cart/:id?" element={<CartPage />} />
             </Routes>
         </Container>
     </main>
