@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 
 import { Footer, Header } from "./layouts";
-import { HomePage, ProductDetailsPage, CartPage } from "./pages";
+import { HomePage, ProductDetailsPage, CartPage, CartPageParams } from "./pages";
 
 const App = () => {
     return (
@@ -21,7 +21,9 @@ const Main = () => {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/product/:id" element={<ProductDetailsPage />} />
-                <Route path="/cart/:id?" element={<CartPage />} />
+                <Route path="/cart" element={<CartPage />}>
+                    <Route path=":id" element={<CartPageParams />} />
+                </Route>
             </Routes>
         </Container>
     </main>
