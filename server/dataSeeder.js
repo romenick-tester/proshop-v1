@@ -1,11 +1,11 @@
 require("mongoose");
 require("dotenv").config();
-const connectDB = require("../assets/connectDB");
+const connectDB = require("../connectDB");
+const users = require("../data/users");
+const products = require("../data/products");
 const User = require("./models/User");
 const Product = require("./models/Product");
 const Order = require("./models/Order");
-const users = require("../assets/data/users");
-const products = require("../assets/data/products");
 
 connectDB();
 

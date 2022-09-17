@@ -1,8 +1,8 @@
 const express = require("express");
 require("dotenv").config();
 const productRoutes = require("./routes/productRoutes");
-const connectDB = require("./assets/connectDB");
-const { notFound, errorHandler } = require("./assets/middlewares/errorHandlers");
+const connectDB = require("./connectDB");
+const { notFound, errorHandler } = require("./middlewares/errorHandlers");
 
 const server = express();
 
