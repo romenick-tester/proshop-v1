@@ -6,7 +6,7 @@ import {
     GET_PRODUCT_DETAILS_REQUEST,
     GET_PRODUCT_DETAILS_SUCCESS,
     GET_PRODUCT_DETAILS_ERROR
-} from "../constants";
+} from "../constants/productConstants";
 
 const getProducts = () => async (dispatch) => {
     dispatch({ type: GET_PRODUCTS_REQUEST });

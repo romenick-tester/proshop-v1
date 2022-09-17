@@ -5,7 +5,7 @@ import {
     GET_PRODUCT_DETAILS_REQUEST,
     GET_PRODUCT_DETAILS_SUCCESS,
     GET_PRODUCT_DETAILS_ERROR
-} from "../constants";
+} from "../constants/productConstants";
 
 const productListInitialStates = {
     loading: false,

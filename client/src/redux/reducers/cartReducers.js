@@ -16,7 +16,7 @@ const cartReducer = (state = cartReducerInitialState, action) => {
             if (existItem) {
                 return {
                     ...state,
-                    cartItems: state.cartItems.map(x => x.productId === existItem.productId)
+                    cartItems: state.cartItems.map(x => x.productId === existItem.productId ? item : x)
                 }
             } else {
                 return {

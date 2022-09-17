@@ -3,7 +3,8 @@ import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 
 import { Footer, Header } from "./layouts";
-import { HomePage, ProductDetailsPage, CartPage, CartPageParams } from "./pages";
+import { HomePage, ProductDetailsPage, CartPage } from "./pages";
+import { CartPageParams } from "./subpages";
 
 const App = () => {
     return (
