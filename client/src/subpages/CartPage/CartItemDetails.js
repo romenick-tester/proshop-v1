@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Row, Col, ListGroup, Image, Form, Button } from "react-bootstrap";
 import { FaTrash } from "react-icons/fa";
-import { addToCart } from "../../redux/actions/cartActions";
+import { addToCart, removeItem } from "../../redux/actions/cartActions";
 
 
 const CartItemDetails = ({ cartItems }) => {
     const dispatch = useDispatch();
 
     const removeFromCartHandler = (productId) => {
-        console.log(`remove item: ${productId}`);
+        dispatch(removeItem(productId));
     };
 
     return (
