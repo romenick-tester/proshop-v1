@@ -20,7 +20,7 @@ const CartPage = () => {
                     }
                 </Col>
                 <Col md={4}>
-                    <CartCheckout />
+                    <CartCheckout cartItems={cartItems} />
                 </Col>
             </Row>
 
