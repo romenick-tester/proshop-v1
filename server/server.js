@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const productRoutes = require("./routes/productRoutes");
+const userRoutes = require("./routes/userRoutes");
 const connectDB = require("./connectDB");
 const { notFound, errorHandler } = require("./middlewares/errorHandlers");
 
@@ -15,6 +16,7 @@ server.get("/", (req, res) => {
 });
 
 server.use("/api/v1/products", productRoutes);
+server.use("/api/v1/user", userRoutes);
 
 server.use(notFound);
 server.use(errorHandler);
