@@ -35,9 +35,11 @@ const userLogin = asyncHandler(async (req, res) => {
 // route    GET /api/v1/user/profile
 // access   Private
 const userProfile = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.user._id).select("-password");
+
     res
         .status(200)
-        .json({ msg: "user profile route", payload: req.user._id })
+        .json(user)
 });
 
 module.exports = {
