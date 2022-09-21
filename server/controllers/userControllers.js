@@ -4,6 +4,9 @@ const asyncHandler = require("express-async-handler");
 const User = require("../models/User");
 const generateToken = require("../utils/generateToken");
 
+// @desc    Login user with token
+// @route   POST /api/v1/user/auth/login
+// @access  Public
 const userLogin = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
 
@@ -28,6 +31,16 @@ const userLogin = asyncHandler(async (req, res) => {
 
 });
 
+// @desc    Get user profile
+// route    GET /api/v1/user/profile
+// access   Private
+const userProfile = asyncHandler(async (req, res) => {
+    res
+        .status(200)
+        .json({ msg: "user profile route", payload: req.user._id })
+});
+
 module.exports = {
-    userLogin
+    userLogin,
+    userProfile
 }
