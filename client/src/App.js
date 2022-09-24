@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 
 import { Footer, Header } from "./layouts";
-import { HomePage, ProductDetailsPage, CartPage } from "./pages";
+import { HomePage, ProductDetailsPage, CartPage, AuthPage } from "./pages";
 import { CartPageParams } from "./subpages";
 
 const App = () => {
@@ -25,6 +25,7 @@ const Main = () => {
                 <Route path="/cart" element={<CartPage />}>
                     <Route path=":id" element={<CartPageParams />} />
                 </Route>
+                <Route path="/login" element={<AuthPage />} />
             </Routes>
         </Container>
     </main>
