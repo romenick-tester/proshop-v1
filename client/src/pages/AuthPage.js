@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../redux/actions/userActions";
 
 
@@ -8,6 +9,15 @@ const AuthPage = () => {
     const [password, setPassword] = useState("");
 
     const dispatch = useDispatch();
+    const navTo = useNavigate();
+
+    const { auth } = useSelector(state => state.user);
+
+    useEffect(() => {
+        if (auth) {
+            navTo("/test/success");
+        }
+    }, [navTo, auth]);
 
     const submitHandler = (e) => {
         e.preventDefault();
