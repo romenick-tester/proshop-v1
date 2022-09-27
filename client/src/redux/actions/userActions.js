@@ -23,10 +23,12 @@ const loginUser = ({ email, password }) => async (dispatch) => {
             type: USER_LOGIN_SUCCESS,
             payload: data
         });
+
+        localStorage.setItem("userDetails", JSON.stringify(data));
     } catch (err) {
         dispatch({
             type: USER_LOGIN_ERROR,
-            payload: err.response && err.response.data ? err.response.data.message : err.message
+            payload: err.response && err.response.data.message ? err.response.data.message : err.message
         });
     }
 };

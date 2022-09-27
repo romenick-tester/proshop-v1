@@ -11,13 +11,13 @@ const AuthPage = () => {
     const dispatch = useDispatch();
     const navTo = useNavigate();
 
-    const { auth } = useSelector(state => state.user);
+    const { profile } = useSelector(state => state.user);
 
     useEffect(() => {
-        if (auth) {
+        if (profile) {
             navTo("/test/success");
         }
-    }, [navTo, auth]);
+    }, [navTo, profile]);
 
     const submitHandler = (e) => {
         e.preventDefault();

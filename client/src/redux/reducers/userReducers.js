@@ -7,7 +7,7 @@ import {
 
 const userInitialState = {
     loading: false,
-    auth: null,
+    profile: null,
     error: null
 };
 
@@ -22,7 +22,7 @@ const userReducer = (state = userInitialState, action) => {
             return {
                 ...state,
                 loading: false,
-                auth: payload,
+                profile: payload,
                 error: null
             };
 
@@ -30,7 +30,7 @@ const userReducer = (state = userInitialState, action) => {
             return {
                 ...state,
                 loading: false,
-                auth: null,
+                profile: null,
                 error: payload
             };
 
