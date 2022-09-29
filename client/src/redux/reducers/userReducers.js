@@ -34,6 +34,9 @@ const userReducer = (state = userInitialState, action) => {
                 error: payload
             };
 
+        case USER_LOGOUT_REQUEST:
+            return userInitialState;
+
         default:
             return state;
     }
