@@ -25,7 +25,8 @@ const Main = () => {
                 <Route path="/cart" element={<Page.CartPage />}>
                     <Route path=":id" element={<CartPageParams />} />
                 </Route>
-                <Route path="/login" element={<Page.LoginPage />} />
+                <Route path="/signin" element={<Page.LoginPage />} />
+                <Route path="/signup" element={<Page.RegisterPage />} />
                 <Route path="/profile" element={<h1>Profile</h1>} />
             </Routes>
         </Container>

@@ -11,11 +11,11 @@ const Header = () => {
 
     const navTo = useNavigate();
 
-    const { profile } = useSelector(state => state.user);
+    const { profile } = useSelector(state => state.login);
 
-    const logoutHandler = () => {
+    const signoutHandler = () => {
         dispatch(logoutUser());
-        navTo("/login");
+        navTo("/signin");
     };
 
     return <header>
@@ -36,11 +36,11 @@ const Header = () => {
                                 <LinkContainer to="/profile">
                                     <NavDropdown.Item>Profile</NavDropdown.Item>
                                 </LinkContainer>
-                                <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
+                                <NavDropdown.Item onClick={signoutHandler}>Signout</NavDropdown.Item>
                             </NavDropdown>
                         ) : (
-                            <LinkContainer to="/login">
-                                <Nav.Link><FaUser /> Login</Nav.Link>
+                            <LinkContainer to="/signin">
+                                <Nav.Link><FaUser /> sign-in</Nav.Link>
                             </LinkContainer>
                         )}
                     </Nav>
