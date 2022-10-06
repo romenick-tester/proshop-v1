@@ -6,7 +6,10 @@ import {
     USER_LOGOUT,
     USER_REGISTER_REQUEST,
     USER_REGISTER_SUCCESS,
-    USER_REGISTER_ERROR
+    USER_REGISTER_ERROR,
+    USER_PROFILE_REQUEST,
+    USER_PROFILE_SUCCESS,
+    USER_PROFILE_ERROR
 } from "../constants/userConstants";
 
 
@@ -70,6 +73,34 @@ const registerUser = ({ name, email, password }) => async (dispatch) => {
 const logoutUser = () => dispatch => {
     localStorage.removeItem("userDetails");
     dispatch({ type: USER_LOGOUT });
-}
+};
 
-export { loginUser, logoutUser, registerUser }
+const getUserProfile = (id) => async (dispatch, getState) => {
+    dispatch({ type: USER_PROFILE_REQUEST });
+
+    try {
+        const { login: { profile } } = getState();
+
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${profile.token}`
+            }
+        };
+
+        const { data } = await axios.get(`/api/v1/user/${id}`, config);
+
+        dispatch({
+            type: USER_PROFILE_SUCCESS,
+            payload: data
+        });
+
+    } catch (err) {
+        dispatch({
+            type: USER_PROFILE_ERROR,
+            payload: err.response && err.response.data.message ? err.response.data.message : err.message
+        });
+    }
+};
+
+export { loginUser, logoutUser, registerUser, getUserProfile }

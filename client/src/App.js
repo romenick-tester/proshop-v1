@@ -27,7 +27,7 @@ const Main = () => {
                 </Route>
                 <Route path="/signin" element={<Page.LoginPage />} />
                 <Route path="/signup" element={<Page.RegisterPage />} />
-                <Route path="/profile" element={<h1>Profile</h1>} />
+                <Route path="/profile" element={<Page.ProfilePage />} />
             </Routes>
         </Container>
     </main>
